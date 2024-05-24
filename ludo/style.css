@@ -1,0 +1,11 @@
+.ludo-container {
+    border: 1px solid red;
+    width: 450px;
+}
+
+.ludo-container .ludo {
+    height: 450px;
+    width: 100%;
+    background-image:url('./ludo-bg.jpg');
+    background-size: contain;
+}
