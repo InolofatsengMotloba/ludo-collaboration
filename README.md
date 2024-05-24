@@ -4,4 +4,4 @@ Ludo - A classic board game where players race their tokens around the board to 
 
 ## Video
 
-[![Link to Tutorial](https://youtu.be/2dgYLR2hOTk?si=DuI5TSnpjMGF6Xx_)
+[Link to Tutorial](https://youtu.be/2dgYLR2hOTk?si=DuI5TSnpjMGF6Xx_)
