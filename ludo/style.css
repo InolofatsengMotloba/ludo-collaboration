@@ -9,3 +9,11 @@
     background-image:url('./ludo-bg.jpg');
     background-size: contain;
 }
+
+.btn {
+    padding: 8px 20px;
+    border: none;
+    cursor: pointer;
+    font-size: 16px;
+
+}
