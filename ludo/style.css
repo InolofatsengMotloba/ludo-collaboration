@@ -8,6 +8,7 @@
     width: 100%;
     background-image:url('./ludo-bg.jpg');
     background-size: contain;
+    position: relative;
 }
 
 .player-pieces {
@@ -26,12 +27,39 @@
     left: 50%;*/
 }
 
+.player-piece.highlight{
+    cursor: pointer;
+    border: 2px dashed;
+    animation: spin 1s infinite linear;
+}
+
+@keyframes spin {
+    0% {
+        transform: rotate(0deg);
+    }
+    50% {
+        transform: rotate(180deg) scale(1.4);
+    }
+    100% {
+        transform: rotate(360deg);
+    }
+}
+
 [player=id="P1"].player-piece {
     background-color: #2eafff;
 }
 
 [player=id="P1"].player-piece {
     background-color: #00b550;
+}
+
+.player-bases {
+    width: 40%;
+    height: 40%;
+    border: 2px solid;
+    position: absolute;
+    top: 0;
+    left: 0;
 }
 
 .btn {
