@@ -11,7 +11,27 @@
 }
 
 .player-pieces {
-     
+     height: 100%;
+     width: 100%;
+}
+
+.player-piece {
+    height: 3%;
+    width: 3%;
+    border: 2px solid;
+    border-radius: 50px;
+    position: absolute;
+
+    /*top: 15%;
+    left: 50%;*/
+}
+
+[player=id="P1"].player-piece {
+    background-color: #2eafff;
+}
+
+[player=id="P1"].player-piece {
+    background-color: #00b550;
 }
 
 .btn {
