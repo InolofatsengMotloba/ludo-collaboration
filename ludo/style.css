@@ -1,3 +1,7 @@
+*   {
+        box-sizing: border-box;
+}
+
 .ludo-container {
     border: 1px solid red;
     width: 450px;
@@ -53,13 +57,33 @@
     background-color: #00b550;
 }
 
-.player-bases {
+.player-base {
     width: 40%;
     height: 40%;
-    border: 2px solid;
+    border: 30px solid;
     position: absolute;
-    top: 0;
+}
+
+.player-bases [player-id="P1"].player-base {
+    bottom: 0;
     left: 0;
+    border-color: #1295e7;
+}
+
+.player-bases [player-id="P2"].player-base {
+    top: 0;
+    right: 0;
+    border-color: #049645;
+}
+
+.player-base.highlight {
+    animation: border-blink .7s infinite ease-in-out;
+}
+
+@keyframes border-blink {
+    50% {
+        border-color: rgba(255, 255, 255, 0.8);
+    }
 }
 
 .btn {
