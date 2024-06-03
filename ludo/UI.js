@@ -10,4 +10,14 @@ export class UI {
         static listenPieceClick(callback) {
                 document.querySelector('.player-pieces').addEventListener('click', callback);
         }
+
+         /**
+         * 
+         * @param {string} player
+         * @param {Number} piece
+         * @param {Number} newPosition
+         */
+         setPiecePosition(player, piece, newPosition) {
+                
+         }
 }
