@@ -1,3 +1,5 @@
+import { COORDINATES_MAP } from './constants.js'
+
 const diceButtonElement = document.querySelector ('#dice-btn');
 const playerPiecesElements = {
         P1: document.querySelectorAll('[player-id="P1"].player-piece'),
@@ -22,6 +24,8 @@ export class UI {
          * @param {Number} newPosition
          */
          setPiecePosition(player, piece, newPosition) {
+               const[x, y] = COORDINATES_MAP[newPosition];
+               const pieceElement = playerPiecesElements[player][piece];
 
          }
 }
