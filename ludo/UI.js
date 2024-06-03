@@ -24,7 +24,11 @@ export class UI {
          * @param {Number} newPosition
          */
          setPiecePosition(player, piece, newPosition) {
+                if(!playerPiecesElements[player] || !playerPiecesElements[player][piece]) {
+                        return;
+                }
                const[x, y] = COORDINATES_MAP[newPosition];
+
                const pieceElement = playerPiecesElements[player][piece];
 
          }
