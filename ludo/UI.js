@@ -1,4 +1,8 @@
 const diceButtonElement = document.querySelector ('#dice-btn');
+const playerPiecesElements = {
+        P1: document.querySelectorAll('[player-id="P1"].player-piece'),
+        P2: document.querySelectorAll('[player-id="P2"].player-piece'),
+}
 export class UI {
         static listenDiceClick(callback) {
                 diceButtonElement.addEventListener('click', callback);
@@ -18,6 +22,6 @@ export class UI {
          * @param {Number} newPosition
          */
          setPiecePosition(player, piece, newPosition) {
-                
+
          }
 }
