@@ -42,32 +42,48 @@ export class UI {
     pieceElement.style.left = x * STEP_Length + "%";
   }
   static setTurn(index) {
-        if(index < 0 || index >= PLAYERS.length) {
-                console.error("index out of bound");
-                return;
-        }
-        //Display player ID
-        const player = PLAYERS[index];
-        document.querySelector(".active-player span").innerText = player;
-        const activePlayerBase = document.querySelector('player-base.highlight');
-        if(activePlayerBase) {
-          activePlayerBase.classList.remove('highlight');
+    if (index < 0 || index >= PLAYERS.length) {
+      console.error("index out of bound");
+      return;
+    }
+    //Display player ID
+    const player = PLAYERS[index];
+    document.querySelector(".active-player span").innerText = player;
+    const activePlayerBase = document.querySelector("player-base.highlight");
+    if (activePlayerBase) {
+      activePlayerBase.classList.remove("highlight");
+    }
 
-        }
-        
-        // highlight
-        document.querySelector('player-id="${player}".player-base').classList.add('highlight')
+    // highlight
+    document
+      .querySelector('player-id="${player}".player-base')
+      .classList.add("highlight");
   }
   static enableDice() {
-        diceButtonElement.removeAttribute('disabled');
+    diceButtonElement.removeAttribute("disabled");
   }
 
   static disableDice() {
-        diceButtonElement.setAttribute('disabled', '');
+    diceButtonElement.setAttribute("disabled", "");
+  }
+
+  /**
+   *
+   * @param {string} player
+   * @param {Number} pieces
+   */
+  static highlightPieces(player, pieces) {
+    pieces.forEach((piece) => {
+      const pieceElement = playerPiecesElements[player][piece];
+      pieceElement.classList.add("highlight");
+    });
   }
 }
 
 UI.setPiecePosition("P1", 0, 0);
 UI.setTurn(0);
 UI.setTurn(1);
+
 UI.disableDice();
+UI.enableDice();
+UI.highlightPieces('P1', [0]);
