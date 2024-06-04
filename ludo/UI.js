@@ -25,6 +25,7 @@ export class UI {
          */
          setPiecePosition(player, piece, newPosition) {
                 if(!playerPiecesElements[player] || !playerPiecesElements[player][piece]) {
+                        console.error(`Player element of given player: ${player} and piece ${piece} not found`);
                         return;
                 }
                const[x, y] = COORDINATES_MAP[newPosition];
