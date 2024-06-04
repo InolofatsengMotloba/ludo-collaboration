@@ -83,7 +83,9 @@ export class UI {
                 ele.classList.remove('highlight');
         })
   }
-  
+  static setDiceValue(value) {
+        document.querySelector('.dice-value').innerText = value;
+  }
 }
 
 UI.setPiecePosition("P1", 0, 0);
@@ -94,3 +96,4 @@ UI.disableDice();
 UI.enableDice();
 UI.highlightPieces('P1', [0]);
 UI.unhighlightPieces();
+UI.setDiceValue();
