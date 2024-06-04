@@ -42,4 +42,11 @@ export class Ludo {
                 // this.turn = 0;
                 // this.state = STATE.DICE_ROLLED;
         }
+        listenDiceClick() {
+                UI.listenDiceClick(this.onDiceClick.bind(this))
+        }
+
+        onDiceClick() {
+                console.log('dice clicked!')
+        }
 }
