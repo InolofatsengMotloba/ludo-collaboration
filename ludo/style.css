@@ -26,6 +26,7 @@
     border: 2px solid;
     border-radius: 50px;
     position: absolute;
+    transform: translate(50%, 50%);
 
     /*top: 15%;
     left: 50%;*/
@@ -39,13 +40,13 @@
 
 @keyframes spin {
     0% {
-        transform: rotate(0deg);
+        transform: translate(50%, 50%) rotate(0deg);
     }
     50% {
-        transform: rotate(180deg) scale(1.4);
+        transform: translate(50%, 50%) rotate(180deg) scale(1.4);
     }
     100% {
-        transform: rotate(360deg);
+        transform: translate(50%, 50%) rotate(360deg);
     }
 }
 
@@ -94,6 +95,10 @@
 
 }
 
+.btn:disabled {
+    opacity: 0.5;
+}
+
 .btn-dice {
     background-color: #009d60;
     color: white;
@@ -103,4 +108,8 @@
     display: flex;
     justify-content: space-between;
     margin-top: 15px;
+}
+.dice-value {
+    font-size: 16px;
+    font-weight: bold;
 }
