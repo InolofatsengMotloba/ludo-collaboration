@@ -31,6 +31,8 @@ export class UI {
                const[x, y] = COORDINATES_MAP[newPosition];
 
                const pieceElement = playerPiecesElements[player][piece];
+               pieceElement.style.top = y * STEP_Length + '%';
+               pieceElement.style.left = x * STEP_Length + '%';
 
          }
 }
