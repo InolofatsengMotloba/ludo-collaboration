@@ -88,12 +88,12 @@ export class UI {
   }
 }
 
-UI.setPiecePosition("P1", 0, 0);
-UI.setTurn(0);
-UI.setTurn(1);
+// UI.setPiecePosition("P1", 0, 0);
+// UI.setTurn(0);
+// UI.setTurn(1);
 
-UI.disableDice();
-UI.enableDice();
-UI.highlightPieces('P1', [0]);
-UI.unhighlightPieces();
-UI.setDiceValue();
+// UI.disableDice();
+// UI.enableDice();
+// UI.highlightPieces('P1', [0]);
+// UI.unhighlightPieces();
+// UI.setDiceValue(5);
