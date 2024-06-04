@@ -78,6 +78,12 @@ export class UI {
       pieceElement.classList.add("highlight");
     });
   }
+  static unhighlightPieces() {
+        document.querySelectorAll('.player-piece.highlight').forEach(ele => {
+                ele.classList.remove('highlight');
+        })
+  }
+  
 }
 
 UI.setPiecePosition("P1", 0, 0);
@@ -87,3 +93,4 @@ UI.setTurn(1);
 UI.disableDice();
 UI.enableDice();
 UI.highlightPieces('P1', [0]);
+UI.unhighlightPieces();
