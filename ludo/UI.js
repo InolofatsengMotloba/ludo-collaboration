@@ -41,6 +41,25 @@ export class UI {
     pieceElement.style.top = y * STEP_Length + "%";
     pieceElement.style.left = x * STEP_Length + "%";
   }
+  static setTurn(index) {
+        if(index < 0 || index >= PLAYERS.length) {
+                console.error("index out of bound");
+                return;
+        }
+        //Display player ID
+        const player = PLAYERS[index];
+        document.querySelector(".active-player span").innerText = player;
+        const activePlayerBase = document.querySelector('player-base.highlight');
+        if(activePlayerBase) {
+          activePlayerBase.classList.remove('highlight');
+
+        }
+        
+        // highlight
+        document.querySelector('player-id="${player}".player-base').classList.add('highlight')
+  }
 }
 
 UI.setPiecePosition("P1", 0, 0);
+UI.setTurn(0);
+UI.setTurn(1);
