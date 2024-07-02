@@ -1,13 +1,25 @@
 * {
   box-sizing: border-box;
+<<<<<<< HEAD
+=======
+  margin: 7.6px; /* Added to account for background image border */
+>>>>>>> 7b7644cece320099e620e1adcb74c23dacfe437e
 }
 
 .ludo-container {
   width: 450px;
+<<<<<<< HEAD
   margin: 20px auto; /* Centers the board */
 }
 
 .ludo-container .ludo {
+=======
+  margin: 20px auto;
+}
+
+.ludo-container .ludo {
+  /* border: 1px solid red; */
+>>>>>>> 7b7644cece320099e620e1adcb74c23dacfe437e
   height: 450px;
   width: 100%;
   background-image: url("./ludo-bg.jpg");
@@ -21,6 +33,7 @@
 }
 
 .player-piece {
+<<<<<<< HEAD
   width: 3%;
   height: 3%;
   border: 2px solid;
@@ -31,6 +44,19 @@
   /* top: 15%;
     left: 50%; */
 }
+=======
+  height: 3%;
+  width: 3%;
+  border: 2px solid;
+  border-radius: 50px;
+  position: absolute;
+  /* transform: translate(50%, 50%); */
+
+  /* top: 15%;
+  left: 50%; */
+}
+
+>>>>>>> 7b7644cece320099e620e1adcb74c23dacfe437e
 .player-piece.highlight {
   cursor: pointer;
   border: 2px dashed;
@@ -38,6 +64,7 @@
 }
 @keyframes spin {
   0% {
+<<<<<<< HEAD
     transform: translate(50%, 50%) rotate(0deg);
   }
   50% {
@@ -45,6 +72,15 @@
   }
   100% {
     transform: translate(50%, 50%) rotate(360deg);
+=======
+    transform: rotate(0deg);
+  }
+  50% {
+    transform: rotate(180deg) scale(1.4);
+  }
+  100% {
+    transform: rotate(360deg);
+>>>>>>> 7b7644cece320099e620e1adcb74c23dacfe437e
   }
 }
 
@@ -57,10 +93,18 @@
 }
 
 .player-base {
+<<<<<<< HEAD
   width: 40%;
   height: 40%;
   border: 30px solid;
   position: absolute;
+=======
+  width: 39%;
+  height: 39%;
+  border: 30px solid;
+  position: absolute;
+
+>>>>>>> 7b7644cece320099e620e1adcb74c23dacfe437e
 }
 
 .player-bases [player-id="P1"].player-base {
@@ -90,6 +134,13 @@
   border: none;
   cursor: pointer;
   font-size: 16px;
+<<<<<<< HEAD
+=======
+}
+
+.btn:disabled {
+  opacity: 0.5;
+>>>>>>> 7b7644cece320099e620e1adcb74c23dacfe437e
 }
 
 .btn-dice {
@@ -101,4 +152,12 @@
   display: flex;
   justify-content: space-between;
   margin-top: 15px;
+<<<<<<< HEAD
 }
+=======
+}
+.dice-value {
+  font-size: 16px;
+  font-weight: bold;
+}
+>>>>>>> 7b7644cece320099e620e1adcb74c23dacfe437e
