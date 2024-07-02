@@ -92,6 +92,10 @@
   font-size: 16px;
 }
 
+btn:disabled {
+  opacity: 0.5;
+}
+
 .btn-dice {
   background-color: #009d60;
   color: white;

@@ -65,8 +65,32 @@ export class UI {
       .querySelector(`[player-id="${player}"].player-base`)
       .classList.add("highlight");
   }
+
+  static enableDice() {
+    diceButtonElement.removeAttribute("disabled");
+  }
+
+  static disableDice() {
+    diceButtonElement.setAttribute("disabled", "");
+  }
+
+  /**
+   *
+   * @param {string} player
+   * @param {Number[]} pieces
+   */
+  static highlightPieces(player, pieces) {
+    pieces.forEach((piece) => {
+      const pieceElement = playerPiecesElements[player][piece];
+      pieceElement.classList.add("highlight");
+    });
+  }
 }
 
 UI.setPiecePosition("P1", 0, 0);
 UI.setTurn(0);
 UI.setTurn(1);
+
+UI.disableDice();
+UI.enableDice();
+UI.highlightPieces("P1", [0])
