@@ -106,3 +106,8 @@ btn:disabled {
   justify-content: space-between;
   margin-top: 15px;
 }
+
+.dice-value {
+  font-size: 24px;
+  font-weight: bold;
+}
