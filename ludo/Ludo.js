@@ -48,6 +48,7 @@ export class Ludo {
     // this.state = STATE.DICE_ROLLED;
     this.listenDiceClick();
     this.listenResetClick();
+    this.listenPieceClick();
   }
 
   listenDiceClick() {
@@ -64,5 +65,13 @@ export class Ludo {
 
   resetGame() {
     console.log("reset game!");
+  }
+
+  listenPieceClick() {
+    UI.listenPieceClick(this.onPieceClick.bind(this));
+  }
+
+  onPieceClick() {
+    console.log("piece clicked!");
   }
 }
