@@ -56,7 +56,6 @@ export class UI {
     const activePlayerBase = document.querySelector(".player-base.highlight");
 
     if (activePlayerBase) {
-      document;
       activePlayerBase.classList.remove("highlight");
     }
 
