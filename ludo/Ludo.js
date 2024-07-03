@@ -43,8 +43,26 @@ export class Ludo {
   constructor() {
     console.log("Hello World! Lets play Ludo!");
 
-    this.diceValue = 4;
-    this.turn = 0;
-    this.state = STATE.DICE_ROLLED;
+    // this.diceValue = 4;
+    // this.turn = 0;
+    // this.state = STATE.DICE_ROLLED;
+    this.listenDiceClick();
+    this.listenResetClick();
+  }
+
+  listenDiceClick() {
+    UI.listenDiceClick(this.onDiceClick.bind(this));
+  }
+
+  onDiceClick() {
+    console.log("dice clicked!");
+  }
+
+  listenResetClick() {
+    UI.listenResetClick(this.resetGame.bind(this));
+  }
+
+  resetGame() {
+    console.log("reset game!");
   }
 }
