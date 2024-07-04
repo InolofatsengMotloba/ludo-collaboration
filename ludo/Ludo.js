@@ -71,7 +71,20 @@ export class Ludo {
     UI.listenPieceClick(this.onPieceClick.bind(this));
   }
 
-  onPieceClick() {
+  onPieceClick(event) {
+    const target = event.target;
+
+    if (!target.classList.contains("player-piece")) {
+      return;
+    }
     console.log("piece clicked!");
+
+    const player = target.getAttribute("player-id");
+    const piece = target.getAttribute("piece");
+    this.handlePieceClick(player, piece);
+  }
+
+  handlePieceClick(player, piece) {
+    console.log(player, piece)
   }
 }
