@@ -98,10 +98,20 @@ export class Ludo {
 
   handlePieceClick(player, piece) {
     console.log(player, piece);
+
+    this.movePiece(player, piece, 5 )
   }
 
   setPiecePosition(player, piece, newPosition) {
     this.currentPositions[player][piece] = newPosition;
     UI.setPiecePosition(player, piece, newPosition);
+  }
+
+  movePiece(player, piece, moveBy) {
+    this.setPiecePosition(
+      player,
+      piece,
+      this.currentPositions[player][piece] + moveBy
+    );
   }
 }
