@@ -1,5 +1,5 @@
 import { UI } from "./UI.js";
-import { STATE } from "./constants.js";
+import { BASE_POSITIONS, PLAYERS, STATE } from "./constants.js";
 
 export class Ludo {
   currentPositions = {
@@ -66,6 +66,17 @@ export class Ludo {
 
   resetGame() {
     console.log("reset game!");
+    this.currentPositions = BASE_POSITIONS;
+
+    PLAYERS.forEach((player) => {
+      [0, 1, 2, 3].forEach((piece) => {
+        this.setPiecePosition(
+          player,
+          piece,
+          this.currentPositions[player][piece]
+        );
+      });
+    });
   }
 
   listenPieceClick() {
@@ -90,6 +101,7 @@ export class Ludo {
   }
 
   setPiecePosition(player, piece, newPosition) {
+    this.currentPositions[player][piece] = newPosition;
     UI.setPiecePosition(player, piece, newPosition);
   }
 }
