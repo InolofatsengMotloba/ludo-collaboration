@@ -66,7 +66,7 @@ export class Ludo {
 
   resetGame() {
     console.log("reset game!");
-    this.currentPositions = BASE_POSITIONS;
+    this.currentPositions = structuredClone(BASE_POSITIONS);
 
     PLAYERS.forEach((player) => {
       [0, 1, 2, 3].forEach((piece) => {
