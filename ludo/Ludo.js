@@ -49,6 +49,7 @@ export class Ludo {
     this.listenDiceClick();
     this.listenResetClick();
     this.listenPieceClick();
+    this.setPiecePosition("P1", 0, 0);
   }
 
   listenDiceClick() {
@@ -85,6 +86,10 @@ export class Ludo {
   }
 
   handlePieceClick(player, piece) {
-    console.log(player, piece)
+    console.log(player, piece);
+  }
+
+  setPiecePosition(player, piece, newPosition) {
+    UI.setPiecePosition(player, piece, newPosition);
   }
 }
