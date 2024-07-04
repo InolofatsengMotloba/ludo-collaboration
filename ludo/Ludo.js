@@ -1,5 +1,11 @@
 import { UI } from "./UI.js";
-import { BASE_POSITIONS, PLAYERS, STATE } from "./constants.js";
+import {
+  BASE_POSITIONS,
+  HOME_ENTRANCE,
+  PLAYERS,
+  STATE,
+  TURNING_POINTS,
+} from "./constants.js";
 
 export class Ludo {
   currentPositions = {
@@ -99,7 +105,7 @@ export class Ludo {
   handlePieceClick(player, piece) {
     console.log(player, piece);
 
-    this.movePiece(player, piece, 5 )
+    this.movePiece(player, piece, 5);
   }
 
   setPiecePosition(player, piece, newPosition) {
@@ -108,10 +114,28 @@ export class Ludo {
   }
 
   movePiece(player, piece, moveBy) {
-    this.setPiecePosition(
-      player,
-      piece,
-      this.currentPositions[player][piece] + moveBy
-    );
+    // this.setPiecePosition(
+    //   player,
+    //   piece,
+    //   this.currentPositions[player][piece] + moveBy
+    // );
+    setInterval(() => {
+      this.incrementPiecePositin(player, piece);
+    }, 200);
+  }
+
+  incrementPiecePositin(player, piece) {
+    const currentPosition = this.currentPositions[player][piece];
+    let incrementedPosition;
+
+    if (currentPosition === TURNING_POINTS[player]) {
+      incrementedPosition = HOME_ENTRANCE[player][0];
+    } else if (currentPosition === 51) {
+      incrementedPosition = 0;
+    } else {
+      incrementedPosition = currentPosition + 1;
+    }
+
+    this.setPiecePosition(player, piece);
   }
 }
