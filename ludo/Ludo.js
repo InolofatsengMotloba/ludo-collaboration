@@ -55,7 +55,7 @@ export class Ludo {
     this.listenDiceClick();
     this.listenResetClick();
     this.listenPieceClick();
-    this.setPiecePosition("P1", 0, 0);
+    this.setPiecePosition("P2", 0, 51);
   }
 
   listenDiceClick() {
@@ -119,23 +119,32 @@ export class Ludo {
     //   piece,
     //   this.currentPositions[player][piece] + moveBy
     // );
-    setInterval(() => {
+    const interval = setInterval(() => {
       this.incrementPiecePositin(player, piece);
+      moveBy--;
+
+      if (moveBy === 0) {
+        clearInterval(interval);
+      }
     }, 200);
   }
 
   incrementPiecePositin(player, piece) {
+    this.setPiecePosition(
+      player,
+      piece,
+      this.getIncrementedPosition(player, piece)
+    );
+  }
+
+  getIncrementedPosition(player, piece) {
     const currentPosition = this.currentPositions[player][piece];
-    let incrementedPosition;
 
     if (currentPosition === TURNING_POINTS[player]) {
-      incrementedPosition = HOME_ENTRANCE[player][0];
+      return HOME_ENTRANCE[player][0];
     } else if (currentPosition === 51) {
-      incrementedPosition = 0;
-    } else {
-      incrementedPosition = currentPosition + 1;
+      return 0;
     }
-
-    this.setPiecePosition(player, piece);
+    return currentPosition + 1;
   }
 }
