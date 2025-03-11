@@ -64,6 +64,8 @@ export class Ludo {
 
   onDiceClick() {
     console.log("dice clicked!");
+    this.diceValue - Math.floor(Math.random() * 7);
+    this.state = STATE.DICE_ROLLED;
   }
 
   listenResetClick() {
